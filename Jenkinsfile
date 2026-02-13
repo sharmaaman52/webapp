@@ -13,7 +13,7 @@ pipeline {
         stage ('Build the application') {
             steps {
                 sh '''
-                ansible-playbook -i inventory.ini /var/lib/jenkins/workspace/ansible-project/playbook.yml --limit dev
+                ansible-playbook -i /var/lib/jenkins/workspace/ansible-project/inventory.ini /var/lib/jenkins/workspace/ansible-project/playbook.yml --limit dev
                 '''
             }
         }
