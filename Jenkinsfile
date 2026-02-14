@@ -25,5 +25,11 @@ pipeline {
                 '''
             }
         }
+        
+        stage('Manual Approval') {
+            steps {
+                input message: "Approve deployment to Production?", ok: "Deploy"
+            }
+        }
     }
 }
